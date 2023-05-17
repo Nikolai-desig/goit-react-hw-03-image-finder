@@ -13,7 +13,6 @@ export default class Searchbar extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
     if (this.state.pictureName.trim() === '') {
       alert('Please enter a search keyword');
       return;
