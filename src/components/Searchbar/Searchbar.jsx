@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import css from './Searchbar.module.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default class Searchbar extends React.Component {
   state = {
@@ -14,7 +16,7 @@ export default class Searchbar extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.pictureName.trim() === '') {
-      alert('Please enter a search keyword');
+      toast('Please enter a search keyword');
       return;
     }
 
@@ -40,6 +42,7 @@ export default class Searchbar extends React.Component {
             onChange={this.handleInput}
           />
         </form>
+        <ToastContainer />
       </header>
     );
   }
